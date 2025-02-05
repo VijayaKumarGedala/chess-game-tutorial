@@ -7,6 +7,5 @@ WORKDIR /app
 COPY --chown=${USERNAME}:${USERNAME} . .
 USER ${USERNAME}
 RUN npm install && npm run build
-RUN npm run preview
 EXPOSE 4137
 CMD [ "npm","run","preview","--","host","0.0.0.0" ]
