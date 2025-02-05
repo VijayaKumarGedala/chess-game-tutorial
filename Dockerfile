@@ -4,9 +4,8 @@ LABEL "project"="node" \
 ARG USERNAME="nodejs"
 RUN addgroup -S ${USERNAME} && adduser -S ${USERNAME} -G ${USERNAME}
 WORKDIR /app
-COPY . /app
-USER ${USERNAME}
 COPY --chown=${USERNAME}:${USERNAME} . .
+USER ${USERNAME}
 RUN npm install && npm run build
 RUN npm run preview
 EXPOSE 4137
