@@ -5,6 +5,7 @@ ARG USERNAME="nodejs"
 RUN addgroup -S ${USERNAME} && adduser -S ${USERNAME} -G ${USERNAME}
 WORKDIR /app
 COPY --chown=${USERNAME}:${USERNAME} . /app/
+RUN chown -R ${USERNAME}:${USERNAME} /app/node_modules
 USER ${USERNAME}
 RUN npm install && npm run build
 EXPOSE 4137
