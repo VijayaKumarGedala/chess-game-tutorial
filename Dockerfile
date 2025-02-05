@@ -6,7 +6,7 @@ LABEL "project"="node" \
 ARG USERNAME=nodejs
 
 # Create the user and group
-RUN adduser -D -h /apps -s /bin/sh ${USERNAME}
+RUN adduser -D -h /app -s /bin/sh ${USERNAME}
 
 # Set working directory
 WORKDIR /app
