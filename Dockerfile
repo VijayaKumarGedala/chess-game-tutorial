@@ -22,7 +22,8 @@ RUN npm install && npm run build
 USER ${USERNAME}
 
 # Expose the port
-EXPOSE 4137
+EXPOSE 5173
 
 # Start the application
-CMD [ "npm","run","preview","--","host","0.0.0.0" ]
+CMD [ "npm", "run", "preview", "--", "--port", "5173", "--host", "0.0.0.0" ]
+
